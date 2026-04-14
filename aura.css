@@ -97,3 +97,9 @@ p {
 #cadastro button:hover {
     background-color: darkgreen;
 }
+
+li img {
+    max-width: 200px;
+    display: block;
+    margin-bottom: 10px;
+}

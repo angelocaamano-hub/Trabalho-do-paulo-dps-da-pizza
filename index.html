@@ -14,13 +14,13 @@
         <h2>Cadastrar Novo Item</h2>
         <input type="text" id="nome" placeholder="Nome do item">
         <input type="text" id="desc" placeholder="Descrição">
+        <input type="text" id="preco" placeholder="preço">
         <input type="text" id="url" placeholder="URL da imagem">
         <button onclick="adicionar()">Adicionar</button>
     </section>
-    <hr>
 
 
-    <ol>
+    <ol id="lista-jogos">
         <li>
            
          <h3>five nights at freddy's</h3>   
@@ -64,6 +64,32 @@
             <p class="preço">R$54,99</p>
             </li>
 </ol>
+
+<script>
+    function adicionar() {
+        let nome = document.getElementById("nome").value;
+        let desc = document.getElementById("desc").value;
+        let preco = document.getElementById("preco").value;
+        let url = document.getElementById("url").value;
+
+        let novaLi = document.createElement("li");
+
+        novaLi.innerHTML = `
+            <h3>${nome}</h3>
+            <img src="${url}" alt="${nome}" style="width: 200px;">
+            <p><strong>Descrição:</strong> ${desc}</p>
+            <p class="preço"><strong>Preço:</strong> ${preco}</p>
+        `;
+
+        document.getElementById("lista-jogos").appendChild(novaLi);
+
+        document.getElementById("nome").value = "";
+        document.getElementById("desc").value = "";
+        document.getElementById("preco").value = "";
+        document.getElementById("url").value = "";
+    }
+</script>
+
 </body>
 
 
